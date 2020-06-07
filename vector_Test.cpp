@@ -4,7 +4,7 @@
 #include <algorithm>  // 算法头文件
 
 /*
-vector 容器，容器就是可变数组。使用时在扩充其大小
+vector 容器，容器就是可变数组。使用时在扩充其大小，每次扩容会将原来元素拷贝到新的容器中，原来的容器被销毁
 vecotor入门参考：
 https://blog.csdn.net/weixin_41743247/article/details/90635931
 */
@@ -24,6 +24,13 @@ int main(){
 
     // size() 获取容器大小
     cout << vectorone.size() << endl;
+
+    // capacity() 获取容器可用大小
+    cout << vectorone.capacity() << endl;
+
+    // reserve() 设置容器的预留大小，避免后续多次扩容，
+    cout << vectorone.reserve() << endl;
+
 
     // insert() 在指定迭代器位置之前插入，迭代器end() 并不是容器最后一个元素，而是最后一个元素的下一个
     // 参数说明，开始插入的位置，插入的个数(可省)，插入的元素
